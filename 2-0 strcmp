@@ -1,0 +1,39 @@
+/******************************************************************************************************************
+Assignment name  : ft_strcmp
+Expected files   : ft_strcmp.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Reproduce the behavior of the function strcmp (man strcmp).
+
+Your function must be declared as follows:
+
+int    ft_strcmp(char *s1, char *s2);
+
+
+The strcmp() function takes two strings and returns an integer.
+It compares two strings character by character.
+If the first chracter of two strings is equal,
+the next character of two strings are compared.
+This continues until the corresponding characters of two strings are different
+or a null character '\0' is reached.
+it is defined in the string.h header file.
+*///
+#include <stdio.h>
+
+int     ft_strcmp(char *s1, char *s2)
+{
+    int         i;
+
+    i = 0;
+    while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+        i++;
+    return(s1[i] - s2[i]);
+}
+
+int     main(void)
+{
+    printf("%d\n", ft_strcmp("notsame", "nsame"));
+    printf("%d\n", ft_strcmp("same", "same"));
+    return(0);
+}
